@@ -1195,7 +1195,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -2921,7 +2921,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -7807,7 +7807,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -8303,6 +8303,7 @@ GameObject:
   - component: {fileID: 1636887523}
   - component: {fileID: 1636887522}
   - component: {fileID: 1636887527}
+  - component: {fileID: 1636887528}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -8484,10 +8485,29 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e77f90cc3b49d44d81de3f500d2e012, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movement
+  m_EditorClassIdentifier: Assembly-CSharp::Joystick
   head: {fileID: 1700857892}
   moveSpeed: 2
   joystickDeadzone: 0.15
+--- !u!114 &1636887528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636887521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31506c8aae6416fab50ea63460eb328, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::GrabMovement
+  trackingSpace: {fileID: 1753390848}
+  leftHand: {fileID: 537474935}
+  rightHand: {fileID: 2080595286}
+  grabRadius: 0.15
+  solidLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1637846405
 GameObject:
   m_ObjectHideFlags: 0
@@ -9528,7 +9548,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
@@ -11465,7 +11485,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
