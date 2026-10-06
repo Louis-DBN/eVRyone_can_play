@@ -1,7 +1,4 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class HandsFreeMovement : MonoBehaviour
 {
@@ -21,6 +18,7 @@ public class HandsFreeMovement : MonoBehaviour
     private bool walking = false;
 
     private CharacterController characterController;
+    private Joystick joystick;
 
     private void Start()
     {
@@ -32,12 +30,13 @@ public class HandsFreeMovement : MonoBehaviour
 
         if (head == null || head == transform || !head.IsChildOf(transform))
         {
-            Debug.LogError("Attach Movement to XRRig and assign its headset camera to Head.", this);
+            Debug.LogError("Attach HandsFreeMovement to the camera rig root and assign its headset camera to Head.", this);
             enabled = false;
             return;
         }
 
         characterController = GetComponent<CharacterController>();
+        joystick = GetComponent<Joystick>();
     }
 
     private void Update()
@@ -72,17 +71,30 @@ public class HandsFreeMovement : MonoBehaviour
             }
         }
 
-        // Apply movement forward along the camera's horizontal heading
-        if (walking)
+        // When Joystick is present, it applies movement after checking the hands.
+        if (joystick == null || !joystick.isActiveAndEnabled)
         {
-            Vector3 forward = Vector3.ProjectOnPlane(head.forward, Vector3.up).normalized;
-            Vector3 movement = forward * moveSpeed * Time.deltaTime;
-
+            Vector3 movement = GetMovement();
             if (characterController != null && characterController.enabled)
                 characterController.Move(movement);
             else
                 transform.position += movement;
         }
+    }
+
+    public Vector3 GetMovement()
+    {
+        if (walking)
+        {
+            Vector3 forward = Vector3.ProjectOnPlane(head.forward, Vector3.up).normalized;
+            return forward * moveSpeed * Time.deltaTime;
+        }
+        return Vector3.zero;
+    }
+
+    public void StopWalking()
+    {
+        walking = false;
     }
 
     private void NodDurationExpired()
