@@ -8304,6 +8304,7 @@ GameObject:
   - component: {fileID: 1636887522}
   - component: {fileID: 1636887527}
   - component: {fileID: 1636887528}
+  - component: {fileID: 1636887529}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -8499,7 +8500,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c31506c8aae6416fab50ea63460eb328, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabMovement
   trackingSpace: {fileID: 1753390848}
   leftHand: {fileID: 537474935}
@@ -8508,6 +8509,39 @@ MonoBehaviour:
   solidLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1636887529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636887521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc56b1f85f8dbe40b8de5a7c1932f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandsFreeMovement
+  head: {fileID: 1700857892}
+  maxMoveSpeed: 3
+  moveSpeedCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minNodForwardThreshold: 10
+  maxNodForwardThreshold: 25
+  minLeanSidewaysThreshold: 10
+  maxLeanSidewaysThreshold: 35
+  maxTurnSpeed: 40
+  turnSpeedCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minYawTurnThreshold: 25
+  maxYawTurnThreshold: 60
 --- !u!1 &1637846405
 GameObject:
   m_ObjectHideFlags: 0
