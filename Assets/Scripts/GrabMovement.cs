@@ -15,6 +15,8 @@ public class GrabMovement : MonoBehaviour
     private readonly Vector3[] previousPositions = new Vector3[2];
     private readonly bool[] previousGrips = new bool[2];
 
+    public bool IsGrabbing => grabbedSurfaces[0] != null || grabbedSurfaces[1] != null;
+
     private void Start()
     {
         if (trackingSpace == null || leftHand == null || rightHand == null ||
