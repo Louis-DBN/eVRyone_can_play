@@ -40,7 +40,7 @@ public class Joystick : MonoBehaviour
         if (climbing != null && climbing.isActiveAndEnabled &&
             climbing.TryGetMovement(left, right, out Vector3 pull))
         {
-            if (handsFree != null) handsFree.StopWalking();
+            if (handsFree != null) handsFree.SuppressMovement();
             MoveRig(pull);
             return;
         }
@@ -50,7 +50,7 @@ public class Joystick : MonoBehaviour
             joystick = Vector2.ClampMagnitude(joystick, 1f);
             if (joystick.magnitude > joystickDeadzone)
             {
-                if (handsFree != null) handsFree.StopWalking();
+                if (handsFree != null) handsFree.SuppressMovement();
 
                 Quaternion heading = Quaternion.Euler(0f, head.eulerAngles.y, 0f);
                 Vector3 direction = heading * new Vector3(joystick.x, 0f, joystick.y);
@@ -60,8 +60,6 @@ public class Joystick : MonoBehaviour
                 return;
             }
         }
-        if (handsFree != null && handsFree.isActiveAndEnabled)
-            MoveRig(handsFree.GetMovement());
     }
 
     private void MoveRig(Vector3 movement)
