@@ -14,7 +14,12 @@ public class MazeGenerator : MonoBehaviour
     [SerializeField]
     private int _mazeDepth;
 
+    [SerializeField]
+    private GameObject _exitPrefab;
+
     private MazeCell[,] _mazeGrid;
+    public Vector3 ExitPosition { get; private set; }
+    public Quaternion ExitRotation { get; private set; }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -71,9 +76,26 @@ public class MazeGenerator : MonoBehaviour
         }
         else if(side == 2) {
             _mazeGrid[0, i].ClearLeftWall();
+            ExitPosition = new Vector3(-0.5f, 0f, i);
+            ExitRotation = Quaternion.Euler(0f, 90f, 0f);
         }
         else {
             _mazeGrid[_mazeWidth - 1, i].ClearRightWall();
+            ExitPosition = new Vector3(_mazeWidth - 0.5f, 0f, i);
+            ExitRotation = Quaternion.Euler(0f, -90f, 0f);
+        }
+
+        if (side == 0) {
+            ExitPosition = new Vector3(i, 0f, -0.5f);
+            ExitRotation = Quaternion.identity;
+        }
+        else if (side == 1) {
+            ExitPosition = new Vector3(i, 0f, _mazeDepth - 0.5f);
+            ExitRotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+
+        if (_exitPrefab != null) {
+            Instantiate(_exitPrefab, ExitPosition, ExitRotation);
         }
     }
 

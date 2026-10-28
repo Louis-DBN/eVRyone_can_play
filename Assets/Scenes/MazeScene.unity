@@ -532,6 +532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4326716012661940971, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6311347482344515412, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5
@@ -887,6 +891,10 @@ PrefabInstance:
       propertyPath: _mazeWidth
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5938742714427022288, guid: ed7d0a0b7caf56f41886dcac4e6f24b7, type: 3}
+      propertyPath: _exitPrefab
+      value: 
+      objectReference: {fileID: 1384701037370440765, guid: fb4c54dfc66c67e47ac724cff023ec90, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
