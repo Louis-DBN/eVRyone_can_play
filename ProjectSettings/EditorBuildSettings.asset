@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: d4e11d8d397f5bb4cb9d18c79fcc6bc1
+  - enabled: 1
+    path: Assets/Scenes/MazeScene.unity
+    guid: 67c72ef69d7e8c54a8ab532ffb87d504
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7369cb876e46964297528813d6b805f, type: 2}

@@ -1790,6 +1790,8 @@ MonoBehaviour:
   frequency: 0.5
   amplitude: 0.5
   wallTag: Wall
+  exitHapticClip: {fileID: 2460798210113038985, guid: d3da76e95235e7f4d886528e16da93e4, type: 3}
+  exitTag: Exit
 --- !u!54 &3951833398503545332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1836,7 +1838,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.075
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1381990568594209253
 GameObject:
@@ -5422,7 +5424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: 9deebb0d-3048-4007-80cb-6af6d7abe1a9
+  instanceId: 82fdf916-2c75-4b61-8900-900039b73c0e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -5642,7 +5644,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.6
-  m_Radius: 0.2
+  m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -6589,7 +6591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: 2fd13a00-1642-45a8-85fc-418f73a6d6a0
+  instanceId: add30c59-12de-4ee7-8910-c29d758d315a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -9099,7 +9101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: 812f5eee-6697-46b6-bb4d-63f1ad28b463
+  instanceId: 9261ddcf-07e3-4241-be2d-967962cebe77
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -9380,6 +9382,8 @@ MonoBehaviour:
   frequency: 0.5
   amplitude: 0.5
   wallTag: Wall
+  exitHapticClip: {fileID: 2460798210113038985, guid: d3da76e95235e7f4d886528e16da93e4, type: 3}
+  exitTag: Exit
 --- !u!54 &6355688524495817290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9426,7 +9430,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.075
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7601081009951995134
 GameObject:
