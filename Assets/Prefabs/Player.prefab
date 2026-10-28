@@ -5388,7 +5388,7 @@ GameObject:
   - component: {fileID: 6040527321448106374}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5422,7 +5422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: 44e60efc-0a45-4fe7-b167-c6d90828635c
+  instanceId: 9deebb0d-3048-4007-80cb-6af6d7abe1a9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -5641,7 +5641,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.6
   m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -6589,7 +6589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: 2d9acba6-2836-46d3-b608-cac1dab4171d
+  instanceId: 2fd13a00-1642-45a8-85fc-418f73a6d6a0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -9099,7 +9099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: 888d6d0c-a821-4191-b90e-230b8f916eeb
+  instanceId: 812f5eee-6697-46b6-bb4d-63f1ad28b463
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 

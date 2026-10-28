@@ -28,8 +28,28 @@ public class MazeGenerator : MonoBehaviour
         }
 
         GenerateMaze(null, _mazeGrid[0, 0]);
+        RemoveDuplicateWalls();
 
         CreateExit();
+    }
+
+    private void RemoveDuplicateWalls()
+    {
+        for (int i = 0; i < _mazeWidth - 1; i++)
+        {
+            for (int j = 0; j < _mazeDepth; j++)
+            {
+                _mazeGrid[i, j].ClearRightWall();
+            }
+        }
+
+        for (int i = 0; i < _mazeWidth; i++)
+        {
+            for (int j = 0; j < _mazeDepth - 1; j++)
+            {
+                _mazeGrid[i, j].ClearFrontWall();
+            }
+        }
     }
 
     private void CreateExit() {
