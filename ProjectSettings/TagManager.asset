@@ -31,6 +31,9 @@ TagManager:
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
   - QDSUIToggleThumbnail
+  - Wall
+  - LeftController
+  - RightController
   layers:
   - Default
   - TransparentFX
