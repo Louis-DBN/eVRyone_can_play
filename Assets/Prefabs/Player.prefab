@@ -5388,6 +5388,7 @@ GameObject:
   - component: {fileID: 9220238140583647701}
   - component: {fileID: 8855623465975445083}
   - component: {fileID: 6040527321448106374}
+  - component: {fileID: 7719283746192837465}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5664,6 +5665,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VRGravity
   gravity: -9.81
   groundedVelocity: -2
+--- !u!114 &7719283746192837465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326716012661940971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3847d6e9881d4788bb3a89c905635233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudio
+  footstepsClip: {fileID: 8300000, guid: dd644533d9714fb1b46a0902493e4312, type: 3}
+  bodyThudClip: {fileID: 8300000, guid: e6773f5ebbb84bbabba707cb29f218c5, type: 3}
 --- !u!1 &4346691480018234472
 GameObject:
   m_ObjectHideFlags: 0
