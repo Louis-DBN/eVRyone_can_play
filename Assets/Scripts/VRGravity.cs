@@ -10,6 +10,8 @@ public class VRGravity : MonoBehaviour
     private GrabMovement grabMovement;
     private float verticalVelocity;
 
+    public bool keepGravityWhenGrab = false;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -24,7 +26,7 @@ public class VRGravity : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (grabMovement != null && grabMovement.IsGrabbing)
+        if (!keepGravityWhenGrab && grabMovement != null && grabMovement.IsGrabbing)
         {
             verticalVelocity = 0f;
             return;

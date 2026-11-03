@@ -339,7 +339,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.7924528, g: 0.59768367, b: 0.16197929, a: 1}
   m_Intensity: 0.25
-  m_Range: 1
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
@@ -536,9 +536,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5082533893423980225, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6311347482344515412, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6311347482344515412, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -546,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6311347482344515412, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6311347482344515412, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -885,11 +889,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5938742714427022288, guid: ed7d0a0b7caf56f41886dcac4e6f24b7, type: 3}
       propertyPath: _mazeDepth
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5938742714427022288, guid: ed7d0a0b7caf56f41886dcac4e6f24b7, type: 3}
       propertyPath: _mazeWidth
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5938742714427022288, guid: ed7d0a0b7caf56f41886dcac4e6f24b7, type: 3}
       propertyPath: _exitPrefab

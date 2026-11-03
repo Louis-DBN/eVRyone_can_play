@@ -7,11 +7,11 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] private AudioClip bodyThudClip;
 
     private const string WallTag = "Wall";
-    private const float MinMoveSpeed = 0.15f;
-    private const float MaxFootstepVolume = 0.4f;
-    private const float ThudVolume = 0.65f;
-    private const float CollisionCooldown = 0.45f;
-    private const float MinImpactVelocity = 0.35f;
+    [SerializeField] public float MinMoveSpeed = 0.15f;
+    [SerializeField] public float MaxFootstepVolume = 1f;
+    [SerializeField] public float ThudVolume = 0.50f;
+    [SerializeField] public float CollisionCooldown = 1.0f;
+    [SerializeField] public float MinImpactVelocity = 0.8f;
 
     private CharacterController controller;
     private AudioSource footstepSource;
