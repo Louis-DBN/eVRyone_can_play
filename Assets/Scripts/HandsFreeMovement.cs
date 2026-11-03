@@ -121,8 +121,14 @@ public class HandsFreeMovement : MonoBehaviour
     {
         Vector3 movement = direction * maxMoveSpeed * speedMultiplier * Time.deltaTime;
 
-        if (characterController != null && characterController.enabled)
+        if (characterController != null && characterController.enabled) {
+            // Add gravity other wise can't here foot steps
+            if (characterController.isGrounded && movement.y >= 0f)
+            {
+                movement.y = -0.001f;
+            }
             characterController.Move(movement);
+        }
         else
             transform.position += movement;
     }

@@ -585,10 +585,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7719283746192837465, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
-      propertyPath: MinMoveSpeed
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7719283746192837465, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
       propertyPath: MinImpactVelocity
       value: 0.6
       objectReference: {fileID: 0}
