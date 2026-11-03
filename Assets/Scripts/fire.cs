@@ -7,6 +7,8 @@ public class fire : MonoBehaviour
 
     public Transform orientation;
     public Transform position;
+    public Transform leftLaunchPoint;
+    public Transform rightLaunchPoint;
     
     public Rigidbody rg;
 
@@ -31,12 +33,20 @@ public class fire : MonoBehaviour
 
     private void Update() {
 
-        if (Input.GetMouseButtonDown(0) && !launched) {
-            launched = true;
-            direction = orientation.forward;
+        bool mousePressed = UnityEngine.InputSystem.Mouse.current != null &&
+            UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame;
+        bool leftTrigger = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
+        bool rightTrigger = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
 
-            transform.rotation = orientation.rotation;
-            rg.position = position.position;
+        if ((mousePressed || leftTrigger || rightTrigger) && !launched) {
+            Transform launchPoint = leftTrigger ? leftLaunchPoint : rightLaunchPoint;
+            Transform shotOrientation = launchPoint != null ? launchPoint : orientation;
+            Transform shotPosition = launchPoint != null ? launchPoint : position;
+            launched = true;
+            direction = shotOrientation.forward;
+
+            transform.rotation = shotOrientation.rotation;
+            rg.position = shotPosition.position;
 
             rg.linearVelocity = direction.normalized * speed;
             rg.angularVelocity = Vector3.zero;
@@ -77,6 +87,7 @@ public class fire : MonoBehaviour
         // the more the collisison is big, the more the sound velocity
         
         float volumeScale = (collision.relativeVelocity.magnitude / divide );
-        audioSource.PlayOneShot(collisionSfxs[Random.Range(0, collisionSfxs.Length)]);
+        AudioSource.PlayClipAtPoint(collisionSfxs[Random.Range(0, collisionSfxs.Length)],
+            collision.GetContact(0).point);
     }
 }

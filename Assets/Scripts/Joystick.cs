@@ -10,6 +10,7 @@ public class Joystick : MonoBehaviour
 
     private CharacterController characterController;
     private GrabMovement climbing;
+    private HandsFreeMovement handsFree;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class Joystick : MonoBehaviour
 
         characterController = GetComponent<CharacterController>();
         climbing = GetComponent<GrabMovement>();
+        handsFree = GetComponent<HandsFreeMovement>();
     }
 
     private void LateUpdate()
@@ -38,6 +40,7 @@ public class Joystick : MonoBehaviour
         if (climbing != null && climbing.isActiveAndEnabled &&
             climbing.TryGetMovement(left, right, out Vector3 pull))
         {
+            if (handsFree != null) handsFree.SuppressMovement();
             MoveRig(pull);
             return;
         }
@@ -45,13 +48,17 @@ public class Joystick : MonoBehaviour
         if (left.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 joystick))
         {
             joystick = Vector2.ClampMagnitude(joystick, 1f);
-            if (joystick.magnitude <= joystickDeadzone) return;
+            if (joystick.magnitude > joystickDeadzone)
+            {
+                if (handsFree != null) handsFree.SuppressMovement();
 
-            Quaternion heading = Quaternion.Euler(0f, head.eulerAngles.y, 0f);
-            Vector3 direction = heading * new Vector3(joystick.x, 0f, joystick.y);
-            Vector3 movement = direction * Mathf.Max(0f, moveSpeed) * Time.deltaTime;
+                Quaternion heading = Quaternion.Euler(0f, head.eulerAngles.y, 0f);
+                Vector3 direction = heading * new Vector3(joystick.x, 0f, joystick.y);
+                Vector3 movement = direction * Mathf.Max(0f, moveSpeed) * Time.deltaTime;
 
-            MoveRig(movement);
+                MoveRig(movement);
+                return;
+            }
         }
     }
 

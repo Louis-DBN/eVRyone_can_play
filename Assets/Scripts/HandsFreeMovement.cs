@@ -1,6 +1,6 @@
-using Unity.Mathematics;
 using UnityEngine;
 
+[DefaultExecutionOrder(200)]
 public class HandsFreeMovement : MonoBehaviour
 {
     public Transform head;
@@ -26,6 +26,12 @@ public class HandsFreeMovement : MonoBehaviour
     
 
     private CharacterController characterController;
+    private int suppressedFrame = -1;
+
+    public void SuppressMovement()
+    {
+        suppressedFrame = Time.frameCount;
+    }
 
     private void Start()
     {
@@ -45,8 +51,10 @@ public class HandsFreeMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
+        if (suppressedFrame == Time.frameCount) return;
+
         // Extract local Euler angles relative to character body
         Vector3 localAngles = head.localEulerAngles;
 
