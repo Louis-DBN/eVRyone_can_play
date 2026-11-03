@@ -588,6 +588,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9220238140583647701, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
+      propertyPath: maxMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220238140583647701, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
+      propertyPath: maxTurnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220238140583647701, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
+      propertyPath: maxYawTurnThreshold
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220238140583647701, guid: 53c3d5a3b69e68f40bf87c7749ddf8d6, type: 3}
+      propertyPath: minYawTurnThreshold
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
